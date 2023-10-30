@@ -54,7 +54,8 @@ public:
 
 		if (inLeft == 0)
 		{
-			return 0; //Поправка если символ объекта не является символом исключения
+			if (letter == n) return true;
+			else return false; //Поправка если символ объекта не является символом исключения
 		}
 
 		for (int i = 0; i < 12; ++i) //Проверка входящего символа на сивол исключения анг раскладки
@@ -81,7 +82,6 @@ public:
 		}
 		else
 		{
-
 			return false;
 		}
 	}
@@ -154,8 +154,8 @@ int main()
 	system("chcp 1251");
 	std::cout << std::boolalpha;
 
-	SpecialSymbol symbol('К');
-	char b = 'K';
+	SpecialSymbol symbol('Z');
+	char b = 'Z';
 
 	cout << (symbol == b) << std::endl;
 	cout << (symbol != b) << std::endl;
